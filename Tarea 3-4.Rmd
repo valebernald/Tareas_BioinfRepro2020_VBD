@@ -1,0 +1,41 @@
+---
+title: "Tarea 3.4 Valentina Bernal Durán"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+###Primero hay que cargar los datos de los reads con ruta relativa
+
+```{r}
+reads.data <- read.delim("../data/reads.txt", header = TRUE)
+```
+
+###Hacer un barplot de reads por muestra
+
+```{r}
+barplot(reads.data$nreads,             
+        names.arg = reads.data$sample) 
+```
+
+###Poner títulos al grafico y a cada eje
+
+```{r}
+barplot(reads.data$nreads,              
+        names.arg = reads.data$sample,  
+        main = "Reads Plot",
+        xlab = "sample",                
+        ylab = "reads")
+```
+
+###Colorear cada librería cambiando la paleta de colores, usando su alma de data artistas
+
+```{r}
+barplot(reads.data$nreads,              
+        names.arg = reads.data$sample,  
+        main = "Reads Plot",
+        xlab = "sample",   
+        ylab = "reads",
+        col= c("purple","magenta","pink")) 
+```
+
